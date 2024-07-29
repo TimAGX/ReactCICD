@@ -48,3 +48,15 @@ stages:
         targetType: 'inline'
         script: |
           echo "Pushed image: $(imageRepository):$(tag)"
+
+- stage: Update
+  displayName: Update and push stage
+  jobs:
+  - job: Update
+    displayName: Update
+      
+    steps:
+    - task: ShellScript@2
+      inputs:
+        scriptPath: 'scripts/updatek8smanifest.sh'
+        args: '$tag'
