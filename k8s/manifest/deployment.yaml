@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: react-recipe
-        image: timagxreactcicd:75
+        image: timagxreactcicd
         ports:
         - containerPort: 80
 
