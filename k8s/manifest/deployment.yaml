@@ -1,0 +1,23 @@
+# react-recipe-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-recipe
+  labels:
+    app: react-recipe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-recipe
+  template:
+    metadata:
+      labels:
+        app: react-recipe
+    spec:
+      containers:
+      - name: react-recipe
+        image: react-recipe:v1
+        ports:
+        - containerPort: 80
+
